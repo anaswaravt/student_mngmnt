@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} student form{% endblock %}
+{% block content %}
+{% endblock %}
+div class="inpu-group-text bg-dark text-secondary w-25 input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Name</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="name" id="name" placeholder="{{i.name}}">
+            </div>
+  
+            <div class="inpu-group-text bg-dark text-secondary w-25 input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="email" id="email" placeholder="{{i.email}}">
+            </div>
+  
+            <div class="inpu-group-text bg-dark text-secondary w-25 input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-lg">Phonenumber</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" name="phno" id="phno" placeholder="{{i.phno}}" >
+            </div>
+ 
+
+
+        </form>
+        {% endfor %}
+        </div>
+       
+        
+        
+        <div class="fixed-bottom">                 
+            <a href="{% url 'editprofile' %}" class="btn btn-dark">Edit Profile</a>
+        </div>
+    </div>
+</div>
+ 

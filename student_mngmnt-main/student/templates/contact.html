@@ -1,0 +1,91 @@
+{% extends 'mainbase.html' %}
+{% load static %} 
+{% block title %} contacts {% endblock %}
+{% block content %} 
+<style>
+  body{
+      background-image:url( "{% static 'image/bg2.JPEG' %}");
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+</style>
+
+{% if out == 1 %} 
+<div class="alert alert-dark container text-center col-6" role="alert">
+  Hi {{name}}, we will contact you later ..............
+</div>
+{% endif %}
+<div class=" container d-flex text-color-dark">
+  <div class="container w-10 mr-100">
+
+    <h3 class="text-muted">contact us</h3>
+    <p class="text-muted">connect us on :</p>
+    <p>call :  8356929276</p>
+    <p class="text-muted">Email us at :</p>
+    <p>Enquiry: contact@CMAcollege.com</p>
+    <p> Placement Cell : hr@CMAcollege.com</p>
+    <p class="text-muted">connect us on :</p>
+    <p> Whatsapp</p>
+    <p class="text-muted">Locate us on :</p>
+    <p>GoogleMap</p>
+
+  </div>
+
+</div>
+
+<div class="container ml-5 mr-10 flex-right">
+  <h5> How can we be of assistance?</h5>
+  <p>
+    If you require clarifications on any of the courses  or the admission process, we are happy to help
+  </p>
+
+
+  <form action="" method="POST">
+
+    {% csrf_token %}
+
+    <div class="row mb-3">
+
+        <label for="name" class="col-sm-2 col-form-label">Name :</label>
+
+        <div class="col-sm-10">
+
+            <input type="text" class="form-control" id="name" name="name">
+
+        </div>
+
+    </div>
+
+    <div class="row mb-3">
+
+        <label for="email" class="col-sm-2 col-form-label">Email :</label>
+
+        <div class="col-sm-10">
+
+            <input type="email" id="inputPassword5" class="form-control" id="email" name="email">
+
+        </div>
+
+    </div>
+
+    <div class="row mb-3">
+
+        <label for="phoneno" class="col-sm-2 col-form-label">Phone <br>Number :</label>
+
+        <div class="col-sm-10">
+
+            <input type="number" id="inputPassword5" class="form-control" id="phno" name="phno">
+
+        </div>
+
+    </div>
+
+
+
+</div>
+
+<button type="submit" class="btn btn-dark form-check float-right">Submit</button>
+
+</form>
+
+{% endblock %}

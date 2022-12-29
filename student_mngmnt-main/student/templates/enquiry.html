@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Enquiry details {% endblock %}
+{% block content %}
+<body  style="background-color:rgb(83, 180, 184);" >
+
+<h1 class="text-center">Enquiry Details</h1>
+<table class="container table table-dark table-stripped">
+    <tr>
+        <th>Name</th>
+          <th>Email</th>
+          <th>Phonenumber</th>
+      </tr>
+      {% csrf_token %}
+
+      {% for i in form %}
+      <tr>
+          <td>{{i.name}}</td>
+          <td>{{i.email}}</td>
+          <td>{{i.phno}}</td>
+     
+      </tr>
+      {% endfor %}
+    </table>
+   
+{% endblock %}

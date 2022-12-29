@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} my profile {% endblock %}
+{% block content %}
+<body  style="background-color:rgb(165, 192, 240);" >
+
+<div class="card text-center " style="background-color: rgb(165, 192, 240);">
+    <div class="card-header">
+        <h1 class="text-center">my profile</h1>
+    </div>
+    <div class="card-body container">
+        <div>
+        {% for i in customer%}
+        <form action="" method="post">
+                
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-dark text-secondary w-25">Name</span>
+                <input type="text" aria-label="Firstname" class="form-control" name="name" placeholder="{{i.name}}">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-dark text-secondary w-25">Email</span>
+                <input type="text" aria-label="Firstname" class="form-control" name="email" placeholder="{{i.email}}">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-dark text-secondary w-25">PhoneNumber</span>
+                <input type="text" aria-label="Firstname" class="form-control" name="phno" placeholder="{{i.phno}}">
+            </div>
+            
+            {% endfor %}
+            <div class="card-footer text-muted d-flex justify-content-end">
+                <a href="{% url 'editprofile' %}" class="btn btn-dark">Edit Profile</a>
+            </div>
+            </form>
+        </div>
+{% endblock %}

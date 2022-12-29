@@ -1,0 +1,23 @@
+
+{% extends 'base.html'%}
+{% load crispy_forms_tags %}
+{% block title %} Add Student {% endblock %}
+{% block content %}
+<body  style="background-color:rgb(194, 202, 227);" >
+
+<h2 class="text-center"> Students details</h2>
+<div class="container w-50 text-center p-3 bg-dark text-light ">
+<form action="" method="POST">
+    {% csrf_token %}
+    {{forms|crispy}}
+    <input type="submit" class="mt-4 btn-dark" value="submit" name="submit">
+    
+    <div>
+        {% for message in message %} 
+        <h3>{{message}}</h3>
+        {% endfor %}
+    </div>
+</form>
+</div>
+
+{% endblock %}

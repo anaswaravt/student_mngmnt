@@ -1,0 +1,29 @@
+{% extends 'mainbase.html' %}
+{% load static %} 
+{% block title %} course {% endblock %}
+{% block content %}
+<style>
+    body{
+        background-image:url( "{% static 'image/bg4.JPEG' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+<body background="C:\Users\Admin\Desktop\student_mngmnt_system\student\static\image\clg3.JPEG">
+    <h1 class=" text-center">Our courses</h1>
+<hr>
+{% for c in course %}
+
+<div class="container text-center bg-light mb-5">
+    <div class="card text-center mx-3 my-3" style="width: 80vh; display:inline-block">
+        
+        <div class="card-body">
+            <h5 class="card-title text-muted"> {{c.name}}</h5>
+            <p class="card-text">{{c.description}}</p>
+            <div class="d-flex"><h6>semester:</h6><p>{{c.semester}}</p></div>
+            <div class="d-flex"><h6>fee:</h6><p>{{c.fee}}/-</p></div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

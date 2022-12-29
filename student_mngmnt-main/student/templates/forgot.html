@@ -1,0 +1,72 @@
+{%load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    .form-gap {
+    padding-top: 70px;
+}
+</style>
+</head>
+<body style="background-color: lightseagreen;">
+<div class="form-gap"></div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="text-center">
+                  <h3><i class="fa fa-lock fa-4x"></i></h3>
+                  <h2 class="text-center">Forgot Password?</h2>
+                  <p>You can reset your password here.</p>
+                        <div> {% for message in messages %}
+                            <h3 class="text">{{message}}</h3>
+                                {% endfor %}</div>
+                  <div class="panel-body">
+    
+                    <form id="register-form" role="form" autocomplete="off" class="form" method="post">
+                        {% csrf_token %}
+                      <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
+                          <input id="email" name="email" placeholder="email address" class="form-control"  type="email" onchange="validemail()">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
+                            <input id="pass1" name="pass1" placeholder="password" class="form-control"  type="password" onchange="validpass() ">
+                          </div>
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
+                            <input id="pass2" name="pass2" placeholder="confirm" class="form-control"  type="password" onchange="validpassconform()  ">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <input name="recover-submit" class="btn btn-lg btn-primary btn-block" value="Reset Password" type="submit">
+                      </div>
+                      
+                      <input type="hidden" class="hide" name="token" id="token" value=""> 
+                    </form>
+    
+                  </div> 
+                    
+                </div>
+              </div>
+            </div>
+          </div>
+	</div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>         
+    <script src="{% static 'js/forgot.js' %}"></script>
+    </body>
+</html>
